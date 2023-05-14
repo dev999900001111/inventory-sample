@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "title": "お知らせ1",
+        "message": "お知らせ1の内容",
+        "type": "INFO",
+        "read": false,
+        "createdAt": "2022-01-01T00:00:00.000Z"
+    },
+    {
+        "id": "2",
+        "title": "お知らせ2",
+        "message": "お知らせ2の内容",
+        "type": "WARNING",
+        "read": true,
+        "createdAt": "2022-01-02T00:00:00.000Z"
+    },
+    {
+        "id": "3",
+        "title": "お知らせ3",
+        "message": "お知らせ3の内容",
+        "type": "ERROR",
+        "read": false,
+        "createdAt": "2022-01-03T00:00:00.000Z"
+    }
+]

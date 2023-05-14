@@ -1,0 +1,166 @@
+{
+    "AuthService": {
+        "path": "./src/app/services/auth.service.ts",
+        "models": [],
+        "methods": [
+            {
+                "name": "login",
+                "params": [
+                    {
+                        "name": "username",
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "type": "string"
+                    }
+                ],
+                "return": "Promise<void>"
+            },
+            {
+                "name": "logout",
+                "params": [],
+                "return": "Promise<void>"
+            },
+            {
+                "name": "forgotPassword",
+                "params": [
+                    {
+                        "name": "email",
+                        "type": "string"
+                    }
+                ],
+                "return": "Promise<void>"
+            }
+        ]
+    },
+    "InventoryService": {
+        "path": "./src/app/services/inventory.service.ts",
+        "models": [
+            "InventoryItem"
+        ],
+        "methods": [
+            {
+                "name": "getInventoryList",
+                "params": [],
+                "return": "Promise<InventoryItem[]>"
+            },
+            {
+                "name": "getInventoryItem",
+                "params": [
+                    {
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "return": "Promise<InventoryItem>"
+            },
+            {
+                "name": "updateInventoryItem",
+                "params": [
+                    {
+                        "name": "item",
+                        "type": "InventoryItem"
+                    }
+                ],
+                "return": "Promise<void>"
+            },
+            {
+                "name": "deleteInventoryItem",
+                "params": [
+                    {
+                        "name": "id",
+                        "type": "string"
+                    }
+                ],
+                "return": "Promise<void>"
+            },
+            {
+                "name": "searchInventory",
+                "params": [
+                    {
+                        "name": "searchTerm",
+                        "type": "string"
+                    }
+                ],
+                "return": "Promise<InventoryItem[]>"
+            }
+        ]
+    },
+    "InventoryTransferService": {
+        "path": "./src/app/services/inventory-transfer.service.ts",
+        "models": [],
+        "methods": [
+            {
+                "name": "transferInventory",
+                "params": [
+                    {
+                        "name": "source",
+                        "type": "string"
+                    },
+                    {
+                        "name": "destination",
+                        "type": "string"
+                    },
+                    {
+                        "name": "quantity",
+                        "type": "number"
+                    }
+                ],
+                "return": "Promise<void>"
+            }
+        ]
+    },
+    "InventoryHistoryService": {
+        "path": "./src/app/services/inventory-history.service.ts",
+        "models": [
+            "InventoryHistoryItem"
+        ],
+        "methods": [
+            {
+                "name": "getInventoryHistory",
+                "params": [],
+                "return": "Promise<InventoryHistoryItem[]>"
+            },
+            {
+                "name": "searchInventoryHistory",
+                "params": [
+                    {
+                        "name": "searchTerm",
+                        "type": "string"
+                    }
+                ],
+                "return": "Promise<InventoryHistoryItem[]>"
+            }
+        ]
+    },
+    "InventoryMonitoringService": {
+        "path": "./src/app/services/inventory-monitoring.service.ts",
+        "models": [
+            "AlertSettings",
+            "InventoryItem"
+        ],
+        "methods": [
+            {
+                "name": "getAlertSettings",
+                "params": [],
+                "return": "Promise<AlertSettings>"
+            },
+            {
+                "name": "updateAlertSettings",
+                "params": [
+                    {
+                        "name": "settings",
+                        "type": "AlertSettings"
+                    }
+                ],
+                "return": "Promise<void>"
+            },
+            {
+                "name": "getInventoryStatus",
+                "params": [],
+                "return": "Promise<InventoryItem[]>"
+            }
+        ]
+    }
+}

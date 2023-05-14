@@ -1,0 +1,58 @@
+{
+    "order": {
+        "id": "1",
+        "customer": {
+            "id": "1",
+            "name": "山田 太郎",
+            "email": "yamada@example.com",
+            "phone": "090-1234-5678"
+        },
+        "items": [
+            {
+                "item": {
+                    "id": "1",
+                    "name": "商品A",
+                    "description": "商品Aの説明",
+                    "quantity": 10,
+                    "reorderPoint": 5,
+                    "unitPrice": 1000
+                },
+                "quantity": 2
+            },
+            {
+                "item": {
+                    "id": "2",
+                    "name": "商品B",
+                    "description": "商品Bの説明",
+                    "quantity": 20,
+                    "reorderPoint": 10,
+                    "unitPrice": 2000
+                },
+                "quantity": 1
+            }
+        ],
+        "status": "PENDING",
+        "createdAt": "2022-01-01T10:00:00.000Z"
+    },
+    "shippingAddress": {
+        "street": "東京都渋谷区神宮前1-1-1",
+        "city": "渋谷区",
+        "state": "東京都",
+        "zipCode": "150-0001",
+        "country": "日本"
+    },
+    "billingAddress": {
+        "street": "東京都渋谷区神宮前1-1-1",
+        "city": "渋谷区",
+        "state": "東京都",
+        "zipCode": "150-0001",
+        "country": "日本"
+    },
+    "paymentMethod": {
+        "id": "1",
+        "type": "CREDIT_CARD",
+        "cardNumber": "1234-5678-9012-3456",
+        "expirationDate": "12/24",
+        "cvv": "123"
+    }
+}

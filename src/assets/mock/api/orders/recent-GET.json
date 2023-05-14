@@ -1,0 +1,61 @@
+[
+    {
+        "id": "1",
+        "customer": {
+            "id": "1",
+            "name": "山田 太郎",
+            "email": "yamada@example.com",
+            "phone": "090-1234-5678"
+        },
+        "items": [
+            {
+                "item": {
+                    "id": "1",
+                    "name": "商品A",
+                    "description": "商品Aの説明",
+                    "quantity": 10,
+                    "reorderPoint": 5,
+                    "unitPrice": 1000
+                },
+                "quantity": 2
+            },
+            {
+                "item": {
+                    "id": "2",
+                    "name": "商品B",
+                    "description": "商品Bの説明",
+                    "quantity": 20,
+                    "reorderPoint": 10,
+                    "unitPrice": 2000
+                },
+                "quantity": 1
+            }
+        ],
+        "status": "PENDING",
+        "createdAt": "2022-01-01T10:00:00.000Z"
+    },
+    {
+        "id": "2",
+        "customer": {
+            "id": "2",
+            "name": "田中 次郎",
+            "email": "tanaka@example.com",
+            "phone": "090-2345-6789"
+        },
+        "items": [
+            {
+                "item": {
+                    "id": "3",
+                    "name": "商品C",
+                    "description": "商品Cの説明",
+                    "quantity": 30,
+                    "reorderPoint": 15,
+                    "unitPrice": 3000
+                },
+                "quantity": 3
+            }
+        ],
+        "status": "PROCESSING",
+        "createdAt": "2022-01-02T10:00:00.000Z"
+    }
+]

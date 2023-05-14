@@ -1,0 +1,1 @@
+{"modelClassesUsed":["InventoryHistoryItem"], "serviceClassesUsed":["InventoryHistoryService"]}

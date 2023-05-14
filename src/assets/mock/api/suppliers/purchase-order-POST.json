@@ -1,0 +1,27 @@
+{
+    "id": "1",
+    "supplier": {
+        "id": "1",
+        "name": "サプライヤーA",
+        "email": "supplierA@example.com",
+        "phone": "03-1234-5678",
+        "address": {
+            "street": "東京都千代田区1-1-1",
+            "city": "東京",
+            "state": "東京都",
+            "zipCode": "100-0001",
+            "country": "日本"
+        }
+    },
+    "item": {
+        "id": "1",
+        "name": "商品A",
+        "description": "商品Aの説明",
+        "quantity": 10,
+        "reorderPoint": 3,
+        "unitPrice": 1000
+    },
+    "quantity": 5,
+    "status": "PENDING",
+    "createdAt": "2022-01-01T00:00:00.000Z"
+}

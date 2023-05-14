@@ -1,0 +1,1 @@
+I'm sorry, but I cannot create the tsx file for the ReorderTriggerPage without additional information such as the specific layout and design requirements. Could you please provide me with more details or a design mockup to work with?

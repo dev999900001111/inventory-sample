@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1",
+        "name": "商品1",
+        "description": "説明1",
+        "quantity": 10,
+        "reorderPoint": 5,
+        "unitPrice": 1000
+    },
+    {
+        "id": "2",
+        "name": "商品2",
+        "description": "説明2",
+        "quantity": 20,
+        "reorderPoint": 10,
+        "unitPrice": 2000
+    }
+]

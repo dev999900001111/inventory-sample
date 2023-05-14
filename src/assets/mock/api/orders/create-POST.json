@@ -1,0 +1,24 @@
+{
+    "id": "1",
+    "customer": {
+        "id": "1",
+        "name": "山田 太郎",
+        "email": "yamada@example.com",
+        "phone": "090-1234-5678"
+    },
+    "items": [
+        {
+            "item": {
+                "id": "1",
+                "name": "商品A",
+                "description": "商品Aの説明",
+                "quantity": 10,
+                "reorderPoint": 3,
+                "unitPrice": 1000
+            },
+            "quantity": 2
+        }
+    ],
+    "status": "PENDING",
+    "createdAt": "2022-01-01T00:00:00.000Z"
+}

@@ -1,0 +1,55 @@
+{
+    "id": "1",
+    "inventoryDiscrepancies": [
+        {
+            "id": "1",
+            "inventoryCount": {
+                "item": {
+                    "id": "1",
+                    "name": "商品1",
+                    "description": "商品1の説明",
+                    "quantity": 10,
+                    "reorderPoint": 5,
+                    "unitPrice": 1000
+                },
+                "actualQuantity": 8,
+                "systemQuantity": 10
+            },
+            "discrepancyType": "OVERSTOCK"
+        },
+        {
+            "id": "2",
+            "inventoryCount": {
+                "item": {
+                    "id": "2",
+                    "name": "商品2",
+                    "description": "商品2の説明",
+                    "quantity": 5,
+                    "reorderPoint": 2,
+                    "unitPrice": 2000
+                },
+                "actualQuantity": 3,
+                "systemQuantity": 5
+            },
+            "discrepancyType": "UNDERSTOCK"
+        },
+        {
+            "id": "3",
+            "inventoryCount": {
+                "item": {
+                    "id": "3",
+                    "name": "商品3",
+                    "description": "商品3の説明",
+                    "quantity": 20,
+                    "reorderPoint": 10,
+                    "unitPrice": 500
+                },
+                "actualQuantity": 18,
+                "systemQuantity": 20
+            },
+            "discrepancyType": "DAMAGED"
+        }
+    ],
+    "date": "2022-01-01",
+    "time": "10:00:00"
+}

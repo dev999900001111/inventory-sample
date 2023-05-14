@@ -1,0 +1,49 @@
+{
+    "id": "1234567890",
+    "shippingList": {
+        "id": "123",
+        "order": {
+            "id": "456",
+            "customer": {
+                "id": "789",
+                "name": "山田 太郎",
+                "email": "yamada.taro@example.com",
+                "phone": "090-1234-5678"
+            },
+            "items": [
+                {
+                    "item": {
+                        "id": "111",
+                        "name": "商品A",
+                        "description": "商品Aの説明",
+                        "quantity": 10,
+                        "reorderPoint": 2,
+                        "unitPrice": 1000
+                    },
+                    "quantity": 2
+                },
+                {
+                    "item": {
+                        "id": "222",
+                        "name": "商品B",
+                        "description": "商品Bの説明",
+                        "quantity": 5,
+                        "reorderPoint": 1,
+                        "unitPrice": 2000
+                    },
+                    "quantity": 1
+                }
+            ],
+            "status": "PENDING",
+            "createdAt": "2022-01-01T00:00:00.000Z"
+        },
+        "carrier": {
+            "id": "333",
+            "name": "ヤマト運輸",
+            "trackingUrl": "https://example.com/tracking/1234567890"
+        },
+        "trackingNumber": "1234567890"
+    },
+    "status": "IN_TRANSIT",
+    "updatedAt": "2022-01-02T12:34:56.789Z"
+}

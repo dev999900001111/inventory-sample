@@ -1,0 +1,54 @@
+[
+    {
+        "id": "1",
+        "item": {
+            "id": "1",
+            "name": "商品A",
+            "description": "商品Aの説明",
+            "quantity": 10,
+            "reorderPoint": 3,
+            "unitPrice": 1000
+        },
+        "allocatedQuantity": 2,
+        "availableQuantity": 8
+    },
+    {
+        "id": "2",
+        "item": {
+            "id": "2",
+            "name": "商品B",
+            "description": "商品Bの説明",
+            "quantity": 5,
+            "reorderPoint": 2,
+            "unitPrice": 2000
+        },
+        "allocatedQuantity": 1,
+        "availableQuantity": 4
+    },
+    {
+        "id": "3",
+        "item": {
+            "id": "3",
+            "name": "商品C",
+            "description": "商品Cの説明",
+            "quantity": 3,
+            "reorderPoint": 1,
+            "unitPrice": 3000
+        },
+        "allocatedQuantity": 0,
+        "availableQuantity": 3
+    },
+    {
+        "id": "4",
+        "item": {
+            "id": "4",
+            "name": "商品D",
+            "description": "商品Dの説明",
+            "quantity": 8,
+            "reorderPoint": 2,
+            "unitPrice": 4000
+        },
+        "allocatedQuantity": 1,
+        "availableQuantity": 7
+    }
+]
