@@ -18,15 +18,16 @@ import {
   Input,
   FormErrorMessage,
 } from "@chakra-ui/react";
-import { InventoryAllocation } from "../models/inventory";
-import { InventoryService } from "../services/inventory-service";
+import { InventoryAllocation } from "../models";
+import { InventoryService, ShippingService } from "../services";
 
 interface InventoryAllocationPageProps {
   inventoryService: InventoryService;
+  shippingService: ShippingService;
 }
 
 const InventoryAllocationPage: React.FC<InventoryAllocationPageProps> = ({
-  inventoryService,
+  inventoryService, shippingService,
 }) => {
   const [inventoryAllocations, setInventoryAllocations] = useState<
     InventoryAllocation[]
@@ -40,7 +41,7 @@ const InventoryAllocationPage: React.FC<InventoryAllocationPageProps> = ({
 
   useEffect(() => {
     const fetchInventoryAllocations = async () => {
-      const inventoryAllocations = await inventoryService.getInventoryAllocation();
+      const inventoryAllocations = await shippingService.getInventoryAllocation();
       setInventoryAllocations(inventoryAllocations);
     };
     fetchInventoryAllocations();
@@ -76,15 +77,15 @@ const InventoryAllocationPage: React.FC<InventoryAllocationPageProps> = ({
         ...selectedAllocation,
         allocatedQuantity: Number(newAllocationQuantity),
       };
-      await inventoryService.adjustInventoryAllocation(updatedAllocation);
-      const updatedAllocations = inventoryAllocations.map((allocation) =>
-        allocation.id === updatedAllocation.id ? updatedAllocation : allocation
-      );
-      setInventoryAllocations(updatedAllocations);
+      // await inventoryService.adjustInventoryAllocation(updatedAllocation);
+      // const updatedAllocations = inventoryAllocations.map((allocation) =>
+      //   allocation.id === updatedAllocation.id ? updatedAllocation : allocation
+      // );
+      // setInventoryAllocations(updatedAllocations);
       handleAdjustAllocationClose();
     }
   };
-
+  
   return (
     <>
       <Table>
@@ -94,7 +95,7 @@ const InventoryAllocationPage: React.FC<InventoryAllocationPageProps> = ({
             <Th>Item Description</Th>
             <Th>Allocated Quantity</Th>
             <Th>Available Quantity</Th>
-            <Th>Expected Shipments</Th>
+            {/* <Th>Expected Shipments</Th> */}
             <Th></Th>
           </Tr>
         </Thead>
@@ -105,7 +106,7 @@ const InventoryAllocationPage: React.FC<InventoryAllocationPageProps> = ({
               <Td>{allocation.item.description}</Td>
               <Td>{allocation.allocatedQuantity}</Td>
               <Td>{allocation.availableQuantity}</Td>
-              <Td>{allocation.expectedShipments}</Td>
+              {/* <Td>{allocation.expectedShipments}</Td> */}
               <Td>
                 <Button
                   onClick={() => handleAdjustAllocationClick(allocation)}

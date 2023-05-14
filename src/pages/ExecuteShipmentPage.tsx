@@ -1,4 +1,4 @@
-I'm sorry, but as an AI language model, I cannot create a tsx file. However, I can provide you with a sample code for the ExecuteShipmentPage component using Chakra UI. Please see the code below:
+// I'm sorry, but as an AI language model, I cannot create a tsx file. However, I can provide you with a sample code for the ExecuteShipmentPage component using Chakra UI. Please see the code below:
 
 import { useState, useEffect } from "react";
 import {
@@ -21,7 +21,7 @@ interface ExecuteShipmentPageProps {
 
 const ExecuteShipmentPage: React.FC<ExecuteShipmentPageProps> = ({ orderId }) => {
   const [shippingLists, setShippingLists] = useState<ShippingList[]>([]);
-  const [selectedShippingList, setSelectedShippingList] = useState<ShippingList | null>(null);
+  const [selectedShippingList, setSelectedShippingList] = useState<ShippingList | null>();
   const [carrierName, setCarrierName] = useState("");
   const [trackingNumber, setTrackingNumber] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -32,7 +32,7 @@ const ExecuteShipmentPage: React.FC<ExecuteShipmentPageProps> = ({ orderId }) =>
       try {
         const shippingService = new ShippingService();
         const lists = await shippingService.getShippingArrangements(orderId);
-        setShippingLists(lists);
+        setShippingLists(lists as any);
       } catch (error) {
         console.error(error);
         toast({
@@ -82,7 +82,8 @@ const ExecuteShipmentPage: React.FC<ExecuteShipmentPageProps> = ({ orderId }) =>
     setIsLoading(true);
     try {
       const shippingService = new ShippingService();
-      await shippingService.executeShipment(selectedShippingList, {
+      // async executeShipment(shippingList: ShippingList[], carrierDetails: CarrierDetails): Promise<void> {
+      await shippingService.executeShipment([selectedShippingList], {
         carrierName,
         trackingNumber,
       });
@@ -153,4 +154,4 @@ const ExecuteShipmentPage: React.FC<ExecuteShipmentPageProps> = ({ orderId }) =>
 
 export default ExecuteShipmentPage;
 
-Please note that this is just a sample code and may need to be adjusted to fit your specific requirements.
+// Please note that this is just a sample code and may need to be adjusted to fit your specific requirements.

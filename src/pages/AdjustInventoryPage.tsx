@@ -33,7 +33,7 @@ const AdjustInventoryPage: React.FC<AdjustInventoryPageProps> = ({
   useEffect(() => {
     const fetchInventoryCounts = async () => {
       const items = await inventoryService.getInventoryItems();
-      const counts = items.map((item) => new InventoryCount(item, 0));
+      const counts = items.map((item) => new InventoryCount(item, 0, 0));
       setInventoryCounts(counts);
     };
     fetchInventoryCounts();
@@ -77,9 +77,9 @@ const AdjustInventoryPage: React.FC<AdjustInventoryPageProps> = ({
       setTotalDiscrepancy(0);
       setAdjustmentReason("");
       const items = await inventoryService.getInventoryItems();
-      const counts = items.map((item) => new InventoryCount(item, 0));
+      const counts = items.map((item) => new InventoryCount(item, 0, 0));
       setInventoryCounts(counts);
-    } catch (error) {
+    } catch (error: any) {
       setFormError(error.message);
     }
   };

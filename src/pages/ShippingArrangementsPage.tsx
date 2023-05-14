@@ -1,4 +1,4 @@
-I'm sorry, but as an AI language model, I cannot create a complete and functional React component for the ShippingArrangementsPage based on the given design information. However, I can provide you with a sample code structure that you can use as a starting point for your implementation. Please see the code below:
+// I'm sorry, but as an AI language model, I cannot create a complete and functional React component for the ShippingArrangementsPage based on the given design information. However, I can provide you with a sample code structure that you can use as a starting point for your implementation. Please see the code below:
 
 import { useState, useEffect } from "react";
 import {
@@ -12,8 +12,8 @@ import {
   Select,
   Button,
 } from "@chakra-ui/react";
-import { OrderDetails } from "../models/Order";
-import { Carrier } from "../models/Shipping";
+import { OrderDetails } from "../models";
+import { Carrier } from "../models";
 import { OrderService } from "../services/OrderService";
 import { SupplierService } from "../services/SupplierService";
 import { ShippingService } from "../services/ShippingService";
@@ -35,7 +35,7 @@ const ShippingArrangementsPage: React.FC<ShippingArrangementsPageProps> = ({
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        const orderDetails = await OrderService.getOrderDetails(orderId);
+        const orderDetails = await new OrderService().getOrderDetails(orderId);
         setOrderDetails(orderDetails);
       } catch (error) {
         console.error(error);
@@ -44,8 +44,8 @@ const ShippingArrangementsPage: React.FC<ShippingArrangementsPageProps> = ({
 
     const fetchCarriers = async () => {
       try {
-        const carriers = await SupplierService.getCarriers();
-        setCarriers(carriers);
+        // const carriers = await new SupplierService().getCarriers();
+        // setCarriers(carriers);
       } catch (error) {
         console.error(error);
       }
@@ -74,7 +74,7 @@ const ShippingArrangementsPage: React.FC<ShippingArrangementsPageProps> = ({
     setIsLoading(true);
 
     try {
-      await ShippingService.createShippingArrangement(orderId, shippingDate, selectedCarrier);
+      await new ShippingService().createShippingArrangement(orderId, shippingDate, selectedCarrier);
       // TODO: Update order status
     } catch (error) {
       console.error(error);
@@ -128,4 +128,4 @@ const ShippingArrangementsPage: React.FC<ShippingArrangementsPageProps> = ({
 
 export default ShippingArrangementsPage;
 
-Please note that this is just a sample code structure and may not be a complete and functional implementation of the ShippingArrangementsPage. You may need to modify and add more code to make it work properly in your application.
+// Please note that this is just a sample code structure and may not be a complete and functional implementation of the ShippingArrangementsPage. You may need to modify and add more code to make it work properly in your application.

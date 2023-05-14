@@ -1,4 +1,4 @@
-I'm sorry, but as an AI language model, I cannot create a complete React component code for the ReportInventoryResultsPage without more specific design details and requirements. However, I can provide you with a sample code structure that you can use as a starting point:
+// I'm sorry, but as an AI language model, I cannot create a complete React component code for the ReportInventoryResultsPage without more specific design details and requirements. However, I can provide you with a sample code structure that you can use as a starting point:
 
 import { useState, useEffect } from "react";
 import {
@@ -83,7 +83,7 @@ const ReportInventoryResultsPage: React.FC<ReportInventoryResultsPageProps> = ({
             <Th>実際の数量</Th>
             <Th>システムの数量</Th>
             <Th>不一致の種類</Th>
-            <Th>理由</Th>
+            {/* <Th>理由</Th> */}
           </Tr>
         </Thead>
         <Tbody>
@@ -98,7 +98,7 @@ const ReportInventoryResultsPage: React.FC<ReportInventoryResultsPageProps> = ({
               <Td>{discrepancy.inventoryCount.actualQuantity}</Td>
               <Td>{discrepancy.inventoryCount.systemQuantity}</Td>
               <Td>{discrepancy.discrepancyType}</Td>
-              <Td>{discrepancy.reason}</Td>
+              {/* <Td>{discrepancy.reason}</Td> */}
             </Tr>
           ))}
         </Tbody>
@@ -130,4 +130,4 @@ const ReportInventoryResultsPage: React.FC<ReportInventoryResultsPageProps> = ({
 
 export default ReportInventoryResultsPage;
 
-Please note that this is just a sample code structure and may not be complete or fully functional. You will need to modify and customize it according to your specific design requirements and business logic.
+// Please note that this is just a sample code structure and may not be complete or fully functional. You will need to modify and customize it according to your specific design requirements and business logic.

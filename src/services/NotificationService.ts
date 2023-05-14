@@ -3,17 +3,17 @@ import { Notification } from '../models';
 
 export class NotificationService {
 
-    private apiBase = '';
+    private apiBase = 'http://127.0.0.1:3001';
 
     async getNotifications(): Promise<Notification[]> {
         try {
-            const response = await fetch(`${this.apiBase}/getNotifications/api/GET-NotificationService-getNotifications.json`, {
+            const response = await fetch(`${this.apiBase}/api/notifications-GET.json`, {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token'),
                     'Content-Type': 'application/json',
                 },
-                
+
             });
             const data: Notification[] = await response.json();
             return data;
@@ -22,17 +22,17 @@ export class NotificationService {
             throw error;
         }
     }
-        
+
 
     async markNotificationAsRead(notificationId: string): Promise<void> {
         try {
-            const response = await fetch(`${this.apiBase}/markNotificationAsRead/api/POST-NotificationService-markNotificationAsRead.json`, {
-                method: 'POST',
+            const response = await fetch(`${this.apiBase}/api/notifications/1/mark-read-POST.json`, {
+                method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token'),
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ notificationId }),
+                // body: JSON.stringify({ notificationId }),
             });
             const data: void = await response.json();
             return data;
@@ -41,7 +41,6 @@ export class NotificationService {
             throw error;
         }
     }
-        
+
 }
 // export default NotificationService;
-            

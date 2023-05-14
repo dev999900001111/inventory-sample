@@ -27,7 +27,7 @@ const ConfirmReorderPage: React.FC<ConfirmReorderPageProps> = ({
   const handleConfirm = async () => {
     setIsConfirming(true);
     try {
-      await SupplierService.createPurchaseOrder(supplier, item, quantity);
+      await new SupplierService().createPurchaseOrder(supplier, item, quantity);
       // Redirect to OrderDataPage
     } catch (error) {
       console.error(error);

@@ -46,7 +46,7 @@ export class User {
     public username: string,
     public password: string,
     public role: UserRole
-  ) {}
+  ) { }
 }
 
 export class InventorySummary {
@@ -54,7 +54,7 @@ export class InventorySummary {
     public totalItems: number,
     public totalValue: number,
     public lowStockItems: number
-  ) {}
+  ) { }
 }
 
 export class Item {
@@ -65,11 +65,11 @@ export class Item {
     public quantity: number,
     public reorderPoint: number,
     public unitPrice: number
-  ) {}
+  ) { }
 }
 
 export class OrderItem {
-  constructor(public item: Item, public quantity: number) {}
+  constructor(public item: Item, public quantity: number) { }
 }
 
 export class OrderDetails {
@@ -78,7 +78,7 @@ export class OrderDetails {
     public shippingAddress: Address,
     public billingAddress: Address,
     public paymentMethod: PaymentMethod
-  ) {}
+  ) { }
 }
 
 export class Address {
@@ -88,7 +88,7 @@ export class Address {
     public state: string,
     public zipCode: string,
     public country: string
-  ) {}
+  ) { }
 }
 
 export class PaymentMethod {
@@ -98,7 +98,7 @@ export class PaymentMethod {
     public cardNumber: string,
     public expirationDate: string,
     public cvv: string
-  ) {}
+  ) { }
 }
 
 export class Supplier {
@@ -108,7 +108,7 @@ export class Supplier {
     public email: string,
     public phone: string,
     public address: Address
-  ) {}
+  ) { }
 }
 
 export class PurchaseOrder {
@@ -119,11 +119,11 @@ export class PurchaseOrder {
     public quantity: number,
     public status: PurchaseOrderStatus,
     public createdAt: string
-  ) {}
+  ) { }
 }
 
 export class Carrier {
-  constructor(public id: string, public name: string, public trackingUrl: string) {}
+  constructor(public id: string, public name: string, public trackingUrl: string) { }
 }
 
 export class ShippingArrangement {
@@ -132,7 +132,7 @@ export class ShippingArrangement {
     public order: Order,
     public shippingDate: string,
     public carrier: Carrier
-  ) {}
+  ) { }
 }
 
 export class InventoryAllocation {
@@ -141,7 +141,7 @@ export class InventoryAllocation {
     public item: Item,
     public allocatedQuantity: number,
     public availableQuantity: number
-  ) {}
+  ) { }
 }
 
 export class InventoryCount {
@@ -149,7 +149,7 @@ export class InventoryCount {
     public item: Item,
     public actualQuantity: number,
     public systemQuantity: number
-  ) {}
+  ) { }
 }
 
 export class InventoryDiscrepancy {
@@ -157,7 +157,7 @@ export class InventoryDiscrepancy {
     public id: string,
     public inventoryCount: InventoryCount,
     public discrepancyType: DiscrepancyType
-  ) {}
+  ) { }
 }
 
 export class InventoryReport {
@@ -166,7 +166,7 @@ export class InventoryReport {
     public inventoryDiscrepancies: InventoryDiscrepancy[],
     public date: string,
     public time: string
-  ) {}
+  ) { }
 }
 
 export class Notification {
@@ -177,7 +177,7 @@ export class Notification {
     public type: NotificationType,
     public read: boolean,
     public createdAt: string
-  ) {}
+  ) { }
 }
 
 export class ShippingList {
@@ -186,7 +186,7 @@ export class ShippingList {
     public order: Order,
     public carrier: Carrier,
     public trackingNumber: string
-  ) {}
+  ) { }
 }
 
 export class ShipmentStatus {
@@ -195,7 +195,7 @@ export class ShipmentStatus {
     public shippingList: ShippingList,
     public status: ShipmentStatusType,
     public updatedAt: string
-  ) {}
+  ) { }
 }
 
 export enum ShipmentStatusType {
@@ -213,7 +213,7 @@ export class Order {
     public items: OrderItem[],
     public status: OrderStatus,
     public createdAt: string
-  ) {}
+  ) { }
 }
 
 export class Customer {
@@ -222,5 +222,22 @@ export class Customer {
     public name: string,
     public email: string,
     public phone: string
-  ) {}
+  ) { }
+}
+
+export class CarrierDetails {
+  constructor(
+    public carrierName: string,
+    public trackingNumber: string,
+  ) { }
+}
+
+export class OrderData {
+  constructor(
+    public customer: Customer,
+    public items: OrderItem[],
+    public shippingAddress: Address,
+    public billingAddress: Address,
+    public paymentMethod: PaymentMethod,
+  ) { }
 }

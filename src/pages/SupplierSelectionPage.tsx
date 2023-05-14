@@ -22,7 +22,7 @@ const SupplierSelectionPage: React.FC<Props> = ({ selectedItem }) => {
 
   useEffect(() => {
     const fetchSuppliers = async () => {
-      const suppliers = await SupplierService.getSuppliers();
+      const suppliers = await new SupplierService().getSuppliers();
       setSuppliers(suppliers);
     };
     fetchSuppliers();

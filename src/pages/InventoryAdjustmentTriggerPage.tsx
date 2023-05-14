@@ -1,4 +1,4 @@
-I'm sorry, but as an AI language model, I cannot create a complete and functional React component without a clear understanding of the project's specific requirements, data models, and business logic. However, I can provide you with a sample code structure for the InventoryAdjustmentTriggerPage component using Chakra UI:
+// I'm sorry, but as an AI language model, I cannot create a complete and functional React component without a clear understanding of the project's specific requirements, data models, and business logic. However, I can provide you with a sample code structure for the InventoryAdjustmentTriggerPage component using Chakra UI:
 
 import { useState, useEffect } from "react";
 import {
@@ -17,14 +17,16 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { InventoryCount, InventoryDiscrepancy, DiscrepancyType } from "../models";
-import { InventoryService } from "../services";
+import { InventoryService, ReportService } from "../services";
 
 interface InventoryAdjustmentTriggerPageProps {
   inventoryService: InventoryService;
+  reportService: ReportService;
 }
 
 const InventoryAdjustmentTriggerPage: React.FC<InventoryAdjustmentTriggerPageProps> = ({
   inventoryService,
+  reportService,
 }) => {
   const [inventoryDiscrepancies, setInventoryDiscrepancies] = useState<InventoryDiscrepancy[]>([]);
   const [inventoryCounts, setInventoryCounts] = useState<InventoryCount[]>([]);
@@ -34,7 +36,7 @@ const InventoryAdjustmentTriggerPage: React.FC<InventoryAdjustmentTriggerPagePro
   useEffect(() => {
     const fetchInventoryDiscrepancies = async () => {
       try {
-        const discrepancies = await inventoryService.getInventoryDiscrepancies();
+        const discrepancies = await reportService.getInventoryDiscrepancies();
         setInventoryDiscrepancies(discrepancies);
       } catch (error) {
         toast({
@@ -50,7 +52,7 @@ const InventoryAdjustmentTriggerPage: React.FC<InventoryAdjustmentTriggerPagePro
   }, [inventoryService, toast]);
 
   const handleAdjustment = async () => {
-    const selectedInventoryCounts = inventoryCounts.filter((count) => count.adjustQuantity > 0);
+    const selectedInventoryCounts = inventoryCounts.filter((count) => count.actualQuantity > 0);
     if (selectedInventoryCounts.length === 0) {
       toast({
         title: "Error",
@@ -85,7 +87,7 @@ const InventoryAdjustmentTriggerPage: React.FC<InventoryAdjustmentTriggerPagePro
 
   const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const newInventoryCounts = [...inventoryCounts];
-    newInventoryCounts[index].adjustQuantity = parseInt(event.target.value);
+    newInventoryCounts[index].actualQuantity = parseInt(event.target.value);
     setInventoryCounts(newInventoryCounts);
   };
 
@@ -121,7 +123,7 @@ const InventoryAdjustmentTriggerPage: React.FC<InventoryAdjustmentTriggerPagePro
                 <Input
                   type="number"
                   min={0}
-                  value={inventoryCounts[index]?.adjustQuantity || 0}
+                  value={inventoryCounts[index]?.actualQuantity || 0}
                   onChange={(event) => handleQuantityChange(event, index)}
                 />
               </Td>
@@ -147,4 +149,4 @@ const InventoryAdjustmentTriggerPage: React.FC<InventoryAdjustmentTriggerPagePro
 
 export default InventoryAdjustmentTriggerPage;
 
-Please note that this is just a sample code structure and may not be complete or fully functional for your specific project requirements. You may need to modify and customize the code to fit your needs.
+// Please note that this is just a sample code structure and may not be complete or fully functional for your specific project requirements. You may need to modify and customize the code to fit your needs.

@@ -9,7 +9,8 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
-import { ShippingService, ShipmentStatus } from "../services/shipping-service";
+import { ShippingService } from "../services";
+import { ShipmentStatus } from "../models";
 
 const TrackShipmentPage: React.FC = () => {
   const [trackingNumber, setTrackingNumber] = useState("");
@@ -27,12 +28,12 @@ const TrackShipmentPage: React.FC = () => {
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const shipmentStatus = await ShippingService.trackShipment(
+      const shipmentStatus = await new ShippingService().trackShipment(
         trackingNumber
       );
       setShipmentStatus(shipmentStatus);
       setErrorMessage("");
-    } catch (error) {
+    } catch (error: any) {
       setShipmentStatus(null);
       setErrorMessage(error.message);
     }

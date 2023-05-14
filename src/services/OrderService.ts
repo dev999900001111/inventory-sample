@@ -3,17 +3,17 @@ import { Order, OrderDetails, OrderData } from '../models';
 
 export class OrderService {
 
-    private apiBase = '';
+    private apiBase = 'http://127.0.0.1:3001';
 
     async getRecentOrders(): Promise<Order[]> {
         try {
-            const response = await fetch(`${this.apiBase}/getRecentOrders/api/GET-OrderService-getRecentOrders.json`, {
+            const response = await fetch(`${this.apiBase}/api/orders/recent-GET.json`, {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token'),
                     'Content-Type': 'application/json',
                 },
-                
+
             });
             const data: Order[] = await response.json();
             return data;
@@ -22,17 +22,17 @@ export class OrderService {
             throw error;
         }
     }
-        
+
 
     async getOrderDetails(orderId: string): Promise<OrderDetails> {
         try {
-            const response = await fetch(`${this.apiBase}/getOrderDetails/api/GET-OrderService-getOrderDetails.json`, {
+            const response = await fetch(`${this.apiBase}/api/orders/1-GET.json`, {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token'),
                     'Content-Type': 'application/json',
                 },
-                
+
             });
             const data: OrderDetails = await response.json();
             return data;
@@ -41,17 +41,17 @@ export class OrderService {
             throw error;
         }
     }
-        
+
 
     async createOrder(orderData: OrderData): Promise<Order> {
         try {
-            const response = await fetch(`${this.apiBase}/createOrder/api/POST-OrderService-createOrder.json`, {
-                method: 'POST',
+            const response = await fetch(`${this.apiBase}/api/orders/create-POST.json`, {
+                method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token'),
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ orderData }),
+                // body: JSON.stringify({ orderData }),
             });
             const data: Order = await response.json();
             return data;
@@ -60,7 +60,6 @@ export class OrderService {
             throw error;
         }
     }
-        
+
 }
 // export default OrderService;
-            

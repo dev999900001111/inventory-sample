@@ -1,6 +1,6 @@
-I'm sorry, but as an AI language model, I cannot create a React component in TypeScript with Chakra UI. However, I can provide you with a sample code that you can use as a reference to create the ConductInventoryPage component.
+// I'm sorry, but as an AI language model, I cannot create a React component in TypeScript with Chakra UI. However, I can provide you with a sample code that you can use as a reference to create the ConductInventoryPage component.
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -26,6 +26,12 @@ const ConductInventoryPage: React.FC<ConductInventoryPageProps> = ({
 }) => {
   const [inventoryCounts, setInventoryCounts] = useState<InventoryCount[]>([]);
   const [submitting, setSubmitting] = useState(false);
+
+  const [items, setItems] = useState<Item[]>([]);
+
+  useEffect(() => {
+    inventoryService.getInventoryItems().then((items) => { setItems(items); });
+  });
 
   const handleActualQuantityChange = (
     item: Item,
@@ -73,7 +79,8 @@ const ConductInventoryPage: React.FC<ConductInventoryPageProps> = ({
           </Tr>
         </Thead>
         <Tbody>
-          {inventoryService.getInventoryItems().map((item) => (
+
+          {items.map((item) => (
             <Tr key={item.id}>
               <Td>{item.name}</Td>
               <Td>{item.description}</Td>
@@ -105,7 +112,7 @@ const ConductInventoryPage: React.FC<ConductInventoryPageProps> = ({
         colorScheme="teal"
         isLoading={submitting}
         onClick={handleSubmit}
-        disabled={inventoryCounts.length !== inventoryService.getInventoryItems().length}
+        disabled={inventoryCounts.length !== items.length}
       >
         Submit
       </Button>
@@ -115,4 +122,4 @@ const ConductInventoryPage: React.FC<ConductInventoryPageProps> = ({
 
 export default ConductInventoryPage;
 
-In this sample code, we use Chakra UI components to create a table with columns for Item Name, Description, Quantity, and Actual Quantity. We also use a form control to allow the user to enter the actual quantity for each item. When the user clicks the "Submit" button, we call the `conductInventory` method of the `InventoryService` and pass in the inventory counts and the current date and time. We also disable the button if the user has not entered the actual quantity for all items.
+// In this sample code, we use Chakra UI components to create a table with columns for Item Name, Description, Quantity, and Actual Quantity. We also use a form control to allow the user to enter the actual quantity for each item. When the user clicks the "Submit" button, we call the `conductInventory` method of the `InventoryService` and pass in the inventory counts and the current date and time. We also disable the button if the user has not entered the actual quantity for all items.

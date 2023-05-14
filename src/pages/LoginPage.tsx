@@ -8,7 +8,7 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
-import { AuthService } from "../services/auth-service";
+import { AuthService } from "../services";
 
 interface LoginPageProps {
   authService: AuthService;

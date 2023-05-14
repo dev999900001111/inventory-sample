@@ -1,4 +1,4 @@
-I'm sorry, but as an AI language model, I cannot create a complete and functional React component without a clear understanding of the project's requirements, design system, and data models. However, I can provide you with a sample code structure for the DashboardPage component that you can use as a starting point:
+// I'm sorry, but as an AI language model, I cannot create a complete and functional React component without a clear understanding of the project's requirements, design system, and data models. However, I can provide you with a sample code structure for the DashboardPage component that you can use as a starting point:
 
 import React, { useEffect, useState } from 'react';
 import {
@@ -13,8 +13,8 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import { FaBell } from 'react-icons/fa';
-import { InventorySummary, Order, Notification } from '../../models';
-import { InventoryService, OrderService, NotificationService } from '../../services';
+import { InventorySummary, Order, Notification } from '../models';
+import { InventoryService, OrderService, NotificationService } from '../services';
 
 interface DashboardPageProps {
   inventoryService: InventoryService;
@@ -37,7 +37,7 @@ const DashboardPage: React.FC<DashboardPageProps> = ({
       try {
         const summary = await inventoryService.getInventorySummary();
         setInventorySummary(summary);
-      } catch (error) {
+      } catch (error: any) {
         toast({
           title: 'Error fetching inventory summary',
           description: error.message,
@@ -52,7 +52,7 @@ const DashboardPage: React.FC<DashboardPageProps> = ({
       try {
         const orders = await orderService.getRecentOrders();
         setRecentOrders(orders);
-      } catch (error) {
+      } catch (error: any) {
         toast({
           title: 'Error fetching recent orders',
           description: error.message,
@@ -67,7 +67,7 @@ const DashboardPage: React.FC<DashboardPageProps> = ({
       try {
         const notifications = await notificationService.getNotifications();
         setNotifications(notifications);
-      } catch (error) {
+      } catch (error: any) {
         toast({
           title: 'Error fetching notifications',
           description: error.message,
@@ -147,4 +147,4 @@ const DashboardPage: React.FC<DashboardPageProps> = ({
 
 export default DashboardPage;
 
-This code assumes that the `InventoryService`, `OrderService`, and `NotificationService` are already implemented and injected as props to the component. It also uses Chakra UI components for the layout and styling. You can modify this code to fit your specific project requirements and design system.
+// This code assumes that the `InventoryService`, `OrderService`, and `NotificationService` are already implemented and injected as props to the component. It also uses Chakra UI components for the layout and styling. You can modify this code to fit your specific project requirements and design system.

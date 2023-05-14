@@ -11,8 +11,8 @@ import {
   VStack,
   HStack,
 } from "@chakra-ui/react";
-import { Supplier } from "../models/Supplier";
-import { Item } from "../models/Item";
+import { Supplier } from "../models";
+import { Item } from "../models";
 
 interface PurchaseOrderConfirmationDialogProps {
   isOpen: boolean;
